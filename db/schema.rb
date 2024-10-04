@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_10_04_015727) do
+ActiveRecord::Schema[8.0].define(version: 2024_10_04_143930) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -57,6 +57,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_10_04_015727) do
     t.string "ip_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["created_at"], name: "index_link_clicks_on_created_at"
+    t.index ["url"], name: "index_link_clicks_on_url"
   end
 
   create_table "posts", force: :cascade do |t|
