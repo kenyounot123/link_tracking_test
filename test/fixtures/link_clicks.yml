@@ -4,8 +4,14 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+no_url: 
+  url: ""
+  anchor_text: "random anchor text"
+
+with_url: 
+  url: "some_url"
+  anchor_text: "random anchor text"
+
+some_other_url:
+  url: "some_url"
+  anchor_text: "random anchor text"
