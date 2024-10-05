@@ -13,7 +13,6 @@ export default class extends Controller {
   }
 
   async trackClick(event) {
-    event.preventDefault()
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     // This should send data to our backend 
     const linkClicked = event.target.closest('a')
