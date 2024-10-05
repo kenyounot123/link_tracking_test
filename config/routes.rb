@@ -16,5 +16,7 @@ Rails.application.routes.draw do
     resources :link_clicks, only: [ :index ]
   end
 
+  resources :link_clicks, only: [ :new, :create ]
+
   root "posts#index"
 end

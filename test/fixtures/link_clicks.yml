@@ -4,14 +4,42 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-no_url: 
+no_url:
   url: ""
-  anchor_text: "random anchor text"
+  anchor_text: "Click here for more info"
 
-with_url: 
-  url: "example.com"
-  anchor_text: "random anchor text"
+with_url:
+  url: "https://randomwebsite.com"
+  anchor_text: "Visit Random Website"
 
 some_other_url:
-  url: "example.com"
-  anchor_text: "random anchor text"
+  url: "https://example.org"
+  anchor_text: "Example Organization"
+
+another_url:
+  url: "https://testsite.net"
+  anchor_text: "Test Site"
+
+yet_another_url_1:
+  url: "https://fakesite.io"
+  anchor_text: "Fake Site"
+
+yet_another_url_2:
+  url: "https://fakesite.io"
+  anchor_text: "Fake Site"
+  
+yet_another_url_3:
+  url: "https://fakesite.io"
+  anchor_text: "Fake Site"
+
+additional_url_1:
+  url: "https://myblog.com"
+  anchor_text: "My Personal Blog"
+
+additional_url_2:
+  url: "https://shoponline.com"
+  anchor_text: "Shop Online"
+
+unique_url:
+  url: "https://newsportal.com"
+  anchor_text: "Latest News"

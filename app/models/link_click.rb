@@ -12,6 +12,10 @@ class LinkClick < ApplicationRecord
   end
 
   def self.active_links
-    LinkClick.group(:url).count
+    LinkClick.group(:url).count.keys.size
+  end
+
+  def self.top_clicked_links(top_k)
+    LinkClick.group(:url).order("COUNT(id) DESC").limit(top_k).count(:id)
   end
 end

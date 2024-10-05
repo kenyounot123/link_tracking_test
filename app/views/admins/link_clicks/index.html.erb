@@ -1,12 +1,8 @@
 <div class="min-h-screen flex flex-col">
     <!-- Header -->
     <header class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
-            <div class="flex items-center">
-                <span class="text-gray-700 mr-2">John Doe</span>
-                <img class="h-8 w-8 rounded-full" src="/placeholder.svg?height=32&width=32" alt="User avatar">
-            </div>
+        <div class="max-w-7xl mx-auto py-4 flex justify-between items-center">
+          <h1 class="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
         </div>
     </header>
 
@@ -32,7 +28,7 @@
                           Total Clicks
                         </dt>
                         <dd class="text-3xl font-semibold text-gray-900">
-                          12,345
+                          <%= @total_clicks %>
                         </dd>
                       </dl>
                     </div>
@@ -55,7 +51,7 @@
                           Active Links
                         </dt>
                         <dd class="text-3xl font-semibold text-gray-900">
-                          42
+                          <%= @active_links %>
                         </dd>
                       </dl>
                     </div>
@@ -78,7 +74,7 @@
                           Top Performing Link
                         </dt>
                         <dd class="text-2xl font-semibold text-gray-900">
-                          https://example.com/promo
+                          <%= @most_clicked_link %>
                         </dd>
                       </dl>
                     </div>
@@ -91,7 +87,7 @@
             <div class="bg-white shadow overflow-hidden sm:rounded-lg">
               <div class="px-4 py-5 sm:px-6">
                   <h3 class="text-lg leading-6 font-medium text-gray-900">
-                      Most Clicked Links
+                      Top 10 Most Clicked Links
                   </h3>
               </div>
               <div class="border-t border-gray-200">
@@ -107,30 +103,16 @@
                     </tr>
                   </thead>
                   <tbody class="bg-white divide-y divide-gray-200">
-                    <tr>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        https://example.com/promo
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        1,234
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        https://example.com/sale
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        987
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        https://example.com/new-product
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        765
-                      </td>
-                    </tr>
+                    <% @top_clicked_links.each do |link| %>
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          <%= link[0] %>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                           <%= link[1] %>
+                        </td>
+                      </tr>
+                    <% end %>
                   </tbody>
               </table>
             </div>
