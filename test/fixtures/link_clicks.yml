@@ -9,9 +9,9 @@ no_url:
   anchor_text: "random anchor text"
 
 with_url: 
-  url: "some_url"
+  url: "example.com"
   anchor_text: "random anchor text"
 
 some_other_url:
-  url: "some_url"
+  url: "example.com"
   anchor_text: "random anchor text"

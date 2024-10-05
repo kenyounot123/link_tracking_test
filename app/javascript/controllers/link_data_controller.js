@@ -14,13 +14,38 @@ export default class extends Controller {
 
   async trackClick(event) {
     event.preventDefault()
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     // This should send data to our backend 
     const linkClicked = event.target.closest('a')
 
-    const url = linkClicked.href;
+    let url = linkClicked.href;
     const anchorText = linkClicked.textContent.trim();
     const referrer = document.referrer;
+    const userAgent = navigator.userAgent;
 
-    console.log({ url, anchorText, referrer });
+    // Handle internal links
+    const fragment = url.match(/(#\w*)/)
+    if (fragment) {
+      url = url.match(/(.*?)(?=#)/)[0];
+    }
+
+    try {
+      const response = await fetch("/link_clicks", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': csrfToken
+        },
+        body: JSON.stringify({
+          url: url,
+          anchor_text: anchorText,
+          referrer: referrer,
+          user_agent: userAgent
+        }),
+      })
+      console.log(response)
+    } catch (error) {
+      console.log('Failed to track click: ', error)
+    }
   }
 }
