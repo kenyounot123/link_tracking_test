@@ -4,7 +4,11 @@
 
 My task was to implement a feature in Rails 8 that tracks every link click, both to internal pages and external websites. This data is stored in a database table called
 `link_clicks` while considering any performance tradeoffs.
-
+## Run locally
+* git clone this repo
+* bin/dev to start the rails server with the root route being posts#index
+* this page has posts scaffold functionality as well as a list of links that you can click to test the feature
+* go to `localhost:3000/admin/link_clicks` to see the admin dashboard
 ### Core Features
 1. Track clicks on all links within the application
 2. Store click data in the `link_clicks` table
