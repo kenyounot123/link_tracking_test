@@ -39,7 +39,8 @@ export default class extends Controller {
           url: url,
           anchor_text: anchorText,
           referrer: referrer,
-          user_agent: userAgent
+          user_agent: userAgent,
+          ip: "",
         }),
       })
       console.log(response)

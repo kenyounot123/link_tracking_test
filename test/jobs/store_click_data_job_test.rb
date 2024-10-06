@@ -2,11 +2,10 @@ require "test_helper"
 
 class StoreClickDataJobTest < ActiveJob::TestCase
   include ActiveJob::TestHelper
-  test "link click data is stored with correct arguments" do
-    link_click_params = { url: "example.com", referrer: "some_referrer", user_agent: "Windows" }
-    ip_address = "123:01:2312"
+  test "should store link click data to database" do
+    link_click_params = { url: "example.com", referrer: "some_referrer", user_agent: "Windows", ip_address: "123:01:2312" }
     perform_enqueued_jobs do
-      StoreClickDataJob.perform_later(link_click_params, ip_address)
+      StoreClickDataJob.perform_later(link_click_params)
     end
 
     assert_difference "LinkClick.count", 1 do
@@ -15,6 +14,4 @@ class StoreClickDataJobTest < ActiveJob::TestCase
       end
     end
   end
-  # test "#create enqueues a store click data job" do
-  # end
 end
