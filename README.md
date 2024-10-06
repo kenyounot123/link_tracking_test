@@ -12,6 +12,8 @@ My task was to implement a feature in Rails 8 that tracks every link click, both
 4. Implement the feature with minimal performance impact
 
 ## Implementation/Approach
+### Architecture diagram
+![image](https://github.com/user-attachments/assets/94bcc751-cafc-4319-a294-26b0eb06b9f4)
 
 ### Tracking clicks
 To track every link click I would need some sort of global event listener for all `<a>` tags in my application. I did this using stimulus controllers. Considering how the bulk of my application's html is rendered within the `<body>` tag, I decided to add a `data-link-data-controller` attribute to my body tag so that when this 
