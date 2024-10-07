@@ -29,7 +29,7 @@ class LinkClickTest < ActiveSupport::TestCase
     assert_equal counts_of_unique_urls, LinkClick.top_clicked_links(5)
   end
 
-  test "returns proper message when there are no records in the database" do
+  test "returns valid values for views when there are no records in the database" do
     LinkClick.destroy_all
     total_click = LinkClick.total_clicks
     assert_equal total_click, 0
