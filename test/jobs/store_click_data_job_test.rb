@@ -10,7 +10,7 @@ class StoreClickDataJobTest < ActiveJob::TestCase
 
     assert_difference "LinkClick.count", 1 do
       perform_enqueued_jobs do
-        StoreClickDataJob.perform_later(link_click_params, ip_address)
+        StoreClickDataJob.perform_later(link_click_params)
       end
     end
   end

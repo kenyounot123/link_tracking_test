@@ -103,6 +103,13 @@
                     </tr>
                   </thead>
                   <tbody class="bg-white divide-y divide-gray-200">
+                    <% if @top_clicked_links.empty? %>
+                      <tr>
+                          <td colspan="2" class="px-6 py-4 text-center text-sm text-gray-500">
+                            No data available to display.
+                          </td>
+                      </tr>
+                    <% end %>
                     <% @top_clicked_links.each do |link| %>
                       <tr>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">

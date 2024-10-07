@@ -1,4 +1,7 @@
 class LinkClicksController < ApplicationController
+  # This limits requests by client ip address according to source code
+  # pick some reasonable request within seconds ratio to limit
+  rate_limit to: 20, within: 1.minute
   def create
     # Here we will handle when client sends us link_click data
     # we want to offload this request to be handled by a background job using solid_queue
