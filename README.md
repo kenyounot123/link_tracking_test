@@ -40,6 +40,8 @@ we are only listening for on click event (using left click)
 * Data analytics. Maybe work on data aggregation to provide more valuable insights. Currently only have total clicks, most clicked url, and active links
 
 ## Scaling Considerations
-* Consider what happens if we get a lot of traffic on our website
-* Caching frequently accessed data 
-* asynchronous batch inserting
+1. Consider what happens if we get a lot of traffic on our website
+  * Implemented rate limiting to `LinkClicksController` to prevent user abuse if they spam click links 
+2. Caching frequently accessed data 
+  * use low-level caching to cache results of the db query for admin statistics. That way if there are no changes to admin dashboard
+  we would not need to do the database query again.
